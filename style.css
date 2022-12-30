@@ -1,14 +1,23 @@
+/*Format document*/
 html,body{
     height:297mm;
     width:210mm;
+    background-image: url("assets/background/bg-1.png");
+    background-repeat: no-repeat;
 }
 
 .page{
     display: block;
     margin: 0 1cm 0.5cm;
 }
+/*Format content*/
 
 #profile-photo{
     width: 20%;
     height: 20%;
 }
+
+header{
+
+}
+
