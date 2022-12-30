@@ -39,8 +39,6 @@ header{
     font-family: "arial", Helvetica, sans-serif;
     font-size: 46px;
     letter-spacing: .2rem;
-    /*margin-right: .6rem;*/
-    /*margin-top: 70px;*/
     margin-left: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -53,9 +51,14 @@ header{
     margin-top: 10px;
 }
 
-#contact{
+#contact, #technical-stack {
     width: 35%;
     margin-left: -0.5cm;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
 }
 
 #contact>div{
@@ -66,32 +69,67 @@ header{
     display: flex;
     text-decoration:none;
     color: #5f9401;
-    align-items: center;
     font-size: 20px;
 }
 
-#contact>div>a>img, #live-demo>img{
-    width: 10%;
+#contact>div>a>p>img, #live-demo>img{
+    width: 20px;
     margin-right: 5px;
 }
 
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.links>p{
+    margin: 2px;
+}
+
 #live-demo{
+    height: 95px;
+}
+
+#live-demo>p{
     display: flex;
     align-items: center;
-    margin-left: -15px;
-    height: 50px;
+    font-size: 20px;
+    margin: 0;
 }
 
-#live-demo>img{
-    width: 15%;
-}
-
-#live-demo>ul{
-    padding: 0;
+#live-demo>p>img{
+    width: 10%;
+    padding-right: 5px;
 }
 
 #live-demo>ul>li{
-    list-style-type: none;
     margin-bottom: 5px;
+}
+
+#technical-stack{
+    text-align: justify;
+    font-family: "arial", Helvetica, sans-serif;
+}
+
+#technical-stack>dt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .2rem;
+}
+
+#technical-stack>dd{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+}
+
+#technical-stack dd:after{
+    content: ", ";
+}
+
+#technical-stack dd:last-child:after{
+    content: "";
 }
 
