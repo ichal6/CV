@@ -51,7 +51,7 @@ header{
     margin-top: 10px;
 }
 
-#contact, #technical-stack {
+#contact, #technical-stack, #languages {
     width: 35%;
     margin-left: -0.5cm;
 }
@@ -112,7 +112,7 @@ header{
     font-family: "arial", Helvetica, sans-serif;
 }
 
-#technical-stack>dt{
+#technical-stack>dt, #languages>dl>dt{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,5 +131,11 @@ header{
 
 #technical-stack dd:last-child:after{
     content: "";
+}
+
+#languages>dl>dd{
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 60px;
 }
 
