@@ -1,6 +1,6 @@
 /*Format document*/
 html,body{
-    height:297mm;
+    height:295mm; /*minus 2mm for avoid second empty page*/
     width:210mm;
     background-image: url("assets/background/bg-1.png");
     background-repeat: no-repeat;
@@ -51,7 +51,7 @@ header{
     margin-top: 10px;
 }
 
-#contact, #technical-stack, #languages, #hobby {
+aside {
     margin-left: -0.5cm;
 }
 
@@ -223,5 +223,10 @@ main{
 .pk-icon{
     width: 90px;
     margin-left:-10px;
+}
+
+#gdpr{
+    margin-top: 60px;
+    font-size: 12px;
 }
 
