@@ -138,7 +138,7 @@ header{
     margin-left: 60px;
 }
 
-#about>h2 {
+#about>h2, #experiences>h2 {
     text-align: center;
     margin: 0;
     font-family: "Century Gothic Bold", arial, serif;
@@ -152,7 +152,7 @@ header{
 #about-content{
     font-family: "Century Gothic ", arial, serif;
     text-align: justify;
-    margin: 5px 0 0;
+    margin: 5px 0 10px;
 }
 
 aside{
@@ -161,5 +161,42 @@ aside{
 
 main{
     margin-left: 10px;
+}
+
+#experiences>h2{
+    margin-bottom: 10px;
+}
+
+.experience {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.experience>img {
+    width: 20%;
+    height: 20%;
+}
+
+.experience-info{
+    width: 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.experience-info>*{
+    margin: 2px;
+}
+
+.experience-info>h3{
+    font-family: "Century Gothic Bold", arial, serif;
+    font-size: 18px;
+}
+
+.place{
+    font-family: "Century Gothic", arial, serif;
+    font-style: italic;
+    /*font-size: 18px;*/
 }
 
