@@ -30,9 +30,15 @@ header{
     margin-left: 45px;
 }
 
+#information{
+    flex-basis: 100%;
+    margin-left: 50px;
+}
+
 #personal{
     margin-top: 50px;
-    margin-right: 70px;
+    border: #d6ba9f solid 4px;
+    border-radius: 30px;
 }
 
 #name, #surname{
