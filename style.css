@@ -226,6 +226,11 @@ main{
     font-style: italic;
 }
 
+.project>h3>a{
+    text-decoration:none;
+    color: #5f9401;
+}
+
 .technologies{
     font-style: italic;
     color: #3b3b3b;
