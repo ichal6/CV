@@ -138,7 +138,7 @@ header{
     margin-left: 60px;
 }
 
-#about>h2, #experiences>h2 {
+#about>h2, #experiences>h2, #projects>h2 {
     text-align: center;
     margin: 0;
     font-family: "Century Gothic Bold", arial, serif;
@@ -185,11 +185,11 @@ main{
     justify-content: center;
 }
 
-.experience-info>*{
+.experience-info>*, .project>* {
     margin: 2px;
 }
 
-.experience-info>h3{
+.experience-info>h3, .project>h3 {
     font-family: "Century Gothic Bold", arial, serif;
     font-size: 18px;
 }
@@ -197,6 +197,18 @@ main{
 .place{
     font-family: "Century Gothic", arial, serif;
     font-style: italic;
-    /*font-size: 18px;*/
+}
+
+.project{
+    margin-bottom: 15px;
+}
+
+.project>h3{
+    font-style: italic;
+}
+
+.technologies{
+    font-style: italic;
+    color: #3b3b3b;
 }
 
