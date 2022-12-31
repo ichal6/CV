@@ -52,7 +52,6 @@ header{
 }
 
 #contact, #technical-stack, #languages, #hobby {
-    width: 35%;
     margin-left: -0.5cm;
 }
 
@@ -137,5 +136,20 @@ header{
     display: list-item;
     list-style-type: disc;
     margin-left: 60px;
+}
+
+#about {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*position: absolute;*/
+}
+
+#content{
+    display: grid;
+    grid-template-columns: 260px 480px;
+}
+
+aside{
+
 }
 
