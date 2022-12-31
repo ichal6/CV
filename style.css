@@ -136,9 +136,21 @@ header{
 
 #about>h2, #experiences>h2, #projects>h2, #education>h2 {
     text-align: center;
-    margin: 0;
     font-family: "Century Gothic Bold", arial, serif;
     font-size: 16px;
+    background-color: #3b3b3b;
+    color: white;
+    letter-spacing: .2rem;
+    padding:3px 15px;
+    margin:0 150px 0 150px;
+}
+
+.line{
+    height: 3px;
+    background: #d6ba9f;
+    position: relative;
+    top:13px;
+    z-index: -1;
 }
 
 #content{
@@ -222,4 +234,3 @@ main{
     margin-top: 60px;
     font-size: 12px;
 }
-
