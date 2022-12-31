@@ -51,7 +51,7 @@ header{
     margin-top: 10px;
 }
 
-#contact, #technical-stack, #languages {
+#contact, #technical-stack, #languages, #hobby {
     width: 35%;
     margin-left: -0.5cm;
 }
@@ -107,12 +107,12 @@ header{
     margin-bottom: 5px;
 }
 
-#technical-stack{
+#technical-stack, #hobby-content {
     text-align: justify;
     font-family: "arial", Helvetica, sans-serif;
 }
 
-#technical-stack>dt, #languages>dl>dt{
+#technical-stack>dt, #languages>dl>dt, #hobby>p {
     display: flex;
     align-items: center;
     justify-content: center;
