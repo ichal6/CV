@@ -138,7 +138,7 @@ header{
     margin-left: 60px;
 }
 
-#about>h2, #experiences>h2, #projects>h2 {
+#about>h2, #experiences>h2, #projects>h2, #education>h2 {
     text-align: center;
     margin: 0;
     font-family: "Century Gothic Bold", arial, serif;
@@ -165,34 +165,34 @@ main{
     margin-left: 10px;
 }
 
-#experiences>h2{
+#experiences>h2, #education>h2 {
     margin-bottom: 10px;
 }
 
-.experience {
+.experience , .school {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.experience>img {
+.experience>img{
     width: 20%;
     height: 20%;
 }
 
-.experience-info{
+.experience-info, .school-info{
     width: 150%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.experience-info>*, .project>* {
+.experience-info>*, .project>* , .school>*, .school-info>*{
     margin: 2px;
     font-size: 12px;
 }
 
-.experience-info>h3, .project>h3 {
+.experience-info>h3, .project>h3 , .experience-info>h3{
     font-family: "Century Gothic Bold", arial, serif;
     font-size: 12px;
 }
@@ -213,5 +213,15 @@ main{
 .technologies{
     font-style: italic;
     color: #3b3b3b;
+}
+
+.codecool-icon{
+    width: 60px !important;
+    height: 60px;
+}
+
+.pk-icon{
+    width: 90px;
+    margin-left:-10px;
 }
 
