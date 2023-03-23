@@ -16,18 +16,18 @@ jobs:
       uses: LukaszLapaj/html-to-pdf-action@master
       with:
         htmlFile: ./index.html
-        outputFile: ./example.pdf
+        outputFile: ./Michał_Lechowicz_Resume.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
         name: Resume
-        path: ./example.pdf
+        path: ./Michał_Lechowicz_Resume.pdf
 
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        files: example.pdf
+        files: Michał_Lechowicz_Resume.pdf
       if: startsWith(github.ref, 'refs/tags/')
 
