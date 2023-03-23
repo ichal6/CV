@@ -3,14 +3,23 @@ name: Generate PDF
 on: push
 
 jobs:
-  build:
+  html_to_pdf:
     runs-on: ubuntu-latest
-
     steps:
+    - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
     - name: html to pdf
       uses: LukaszLapaj/html-to-pdf-action@master
       with:
-        htmlFile: ./public/index.html
-        outputFile: ./pdf/resume.pdf
+        htmlFile: ./index.html
+        outputFile: ./example.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Example PDF
+        path: ./example.pdf
