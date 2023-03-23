@@ -3,14 +3,31 @@ name: Generate PDF
 on: push
 
 jobs:
-  build:
+  html_to_pdf:
+    name: Generate PDF
     runs-on: ubuntu-latest
-
     steps:
-    - name: HTML to PDF
-      uses: fifsky/html-to-pdf-action@v0.1.0
+    - name: Checkout code
+      uses: actions/checkout@v3
       with:
-        htmlFile: index.html
-        outputFile: ./pdf/CV.pdf
+        fetch-depth: 1
+
+    - name: html to pdf
+      uses: LukaszLapaj/html-to-pdf-action@master
+      with:
+        htmlFile: ./index.html
+        outputFile: ./Michał_Lechowicz_Resume.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Resume
+        path: ./Michał_Lechowicz_Resume.pdf
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: Michał_Lechowicz_Resume.pdf
+      if: startsWith(github.ref, 'refs/tags/')
 
