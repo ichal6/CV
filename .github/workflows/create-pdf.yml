@@ -11,6 +11,6 @@ jobs:
       uses: LukaszLapaj/html-to-pdf-action@master
       with:
         htmlFile: ./public/index.html
-        outputFile: ./public/resume.pdf
+        outputFile: ./pdf/resume.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
