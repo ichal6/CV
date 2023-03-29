@@ -197,13 +197,13 @@ main{
 }
 
 .experience-info, .school-info{
-    width: 150%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.experience-info>*, .project>* , .school>*, .school-info>*{
+.experience-info>*, .project>* , .school>*, .school-info>*, .experience-description>* {
     margin: 2px;
     font-size: 12px;
 }
@@ -211,6 +211,16 @@ main{
 .experience-info>h3, .project>h3 , .experience-info>h3{
     font-family: "Century Gothic Bold", arial, serif;
     font-size: 12px;
+}
+
+.experience-description {
+    text-align: end;
+    font-style: italic;
+}
+
+.experience-description>p::first-letter {
+    font-weight: bold;
+    color: #a7560b;
 }
 
 .place{
