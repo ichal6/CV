@@ -1,13 +1,13 @@
 /*Format document*/
 html,body{
-    height:295mm; /*minus 2mm for avoid second empty page*/
-    width:210mm;
+    width: 210mm;
     background-image: url("assets/background/bg-1.png");
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .page{
+    height: 297mm;
     display: block;
     margin: 0 1cm 0.5cm;
 }
