@@ -168,7 +168,7 @@ header{
     font-family: "Century Gothic ", arial, serif;
     text-align: justify;
     margin: 5px 0 10px;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 aside{
@@ -206,9 +206,12 @@ main{
     font-size: 12px;
 }
 
+.project>* {
+    font-size: 16px;
+}
+
 .experience-info>h3, .project>h3 , .experience-info>h3{
     font-family: "Century Gothic Bold", arial, serif;
-    font-size: 12px;
 }
 
 .experience-description {
@@ -242,6 +245,11 @@ main{
 .technologies{
     font-style: italic;
     color: #3b3b3b;
+    margin-top: 6px;
+}
+
+.content{
+    margin-top: 3px;
 }
 
 .school-icon{
