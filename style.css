@@ -14,8 +14,8 @@ html,body{
 /*Format content*/
 
 #profile-photo{
-    width: 25%;
-    height: 25%;
+    width: 20%;
+    height: 20%;
     border-radius: 50px;
     border-color: #d6ba9f;
     border-style: solid;
@@ -229,7 +229,7 @@ main{
 
 .experience-info>*, .project>* , .school>*, .school-info>*, .experience-description>* {
     margin: 2px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .project>* {
