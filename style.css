@@ -32,7 +32,7 @@ header{
 
 #information{
     flex-basis: 100%;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 
 #personal{
@@ -41,9 +41,9 @@ header{
     border-radius: 30px;
 }
 
-#name, #surname{
+#name {
     font-family: "arial", Helvetica, sans-serif;
-    font-size: 46px;
+    font-size: 32px;
     letter-spacing: .2rem;
     margin-left: 10px;
     text-align: center;
@@ -200,18 +200,28 @@ main{
     margin-bottom: 10px;
 }
 
-.experience , .school {
+.school {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
 }
 
-.experience>img{
-    width: 20%;
-    height: 20%;
+.experience {
+    display: flex;
+    flex-direction: column;
 }
 
-.experience-info, .school-info{
+.experience-photo-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.experience-photo-info>a>img{
+    margin-right: 50px;
+}
+
+.school-info{
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -219,7 +229,7 @@ main{
 
 .experience-info>*, .project>* , .school>*, .school-info>*, .experience-description>* {
     margin: 2px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .project>* {
@@ -231,11 +241,28 @@ main{
 }
 
 .experience-description {
-    text-align: end;
-    font-style: italic;
+    margin-top: 0;
 }
 
-.experience-description>p::first-letter {
+.experience-description > li {
+    margin-top: 6px;
+}
+
+.experience-description > li > p {
+    text-align: justify;
+    font-style: italic;
+    margin-top: 6px;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.experience-description > h3 {
+    font-family: "Century Gothic", arial, serif;
+    font-size: 16px;
+    color: #3b3b3b;
+}
+
+.experience-description>li::first-letter {
     font-weight: bold;
     color: #a7560b;
 }

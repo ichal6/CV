@@ -13,17 +13,14 @@
         <div id="information">
           <div id="personal">
             <div id="name">
-              Michał
-            </div>
-            <div id="surname">
-              Lechowicz
+              Michał Lechowicz
             </div>
             <div id="description" >
               4th year IT student
             </div>
           </div>
         </div>
-    </header>
+  </header>
   <div id="content">
     <aside>
       <div id="contact">
@@ -111,75 +108,90 @@
         <div class="line"></div>
         <h2>Experiences</h2>
         <div class="experience">
-          <img src="assets/icons/euvic.png" alt="Euvic logo"/>
-          <div class="experience-info">
-            <h3>Junior Java Developer</h3>
-            <p class="place">Euvic</p>
-            <p class="position">Internship</p>
-            <p class="duration"> 5 Sep 2022 to 5 Oct 2022</p>
-            <p class="location">Remote</p>
+          <div class="experience-photo-info">
+            <a href="https://www.euvic.com/pl/"><img src="assets/icons/euvic.png" alt="Euvic logo"/></a>
+            <div class="experience-info">
+              <h3>Junior Java Developer</h3>
+              <p class="place">Euvic</p>
+              <p class="position">Internship</p>
+              <p class="duration"> 5 Sep 2022 to 5 Oct 2022</p>
+              <p class="location">Remote</p>
+            </div>
           </div>
-          <div class="experience-description">
-            <h3>Description</h3>
-            <p>Preparing instructions for migration to a monorepository</p>
-            <p>Configure a new backend environment for Docker</p>
-            <p>Improving the performance of CI/CD pipeline on Bitbucket</p>
-          </div>
-        </div>
-      </div>
-      <div id="projects">
-        <div class="line"></div>
-        <h2>Projects</h2>
-        <div class="project">
-          <h3><a href="https://github.com/ichal6/Follow-the-money-server">Follow the money</a></h3>
-          <p class="content">
-            Web application to track income and spendings for user's financial analysis. 2-person project (now individual)
-          </p>
-          <p class="technologies">
-            Technologies: Java 17, Spring Boot 3, Spring Security – Web Token, Hibernate, PostgreSQL, Angular 15, HTML, CSS, JS, Docker, Junit, CI/CD
-          </p>
-        </div>
-        <div class="project">
-          <h3><a href="https://github.com/ichal6/fsa-backend">Cinemon</a></h3>
-          <p class="content">
-            Web application for films aggregator. 8-person project.
-          </p>
-          <p class="technologies">
-            Technologies: Java 17, Spring Boot 2.7.6, TestContainers, PostgreSQL
-          </p>
-        </div>
-        <div class="project">
-          <h3><a href="https://github.com/ichal6/WdPAI-Lechowicz">Shop Therapy</a></h3>
-          <p class="content">
-            Web application to create shopping lists. Individual project.
-          </p>
-          <p class="technologies">
-            Technologies: PHP 8, MySQL, Vanilla JS
-          </p>
-        </div>
-        <div class="project">
-          <h3><a href="https://github.com/ichal6/QuestStore-WEB-Project">QuestStore</a></h3>
-          <p class="content">
-            Web application for students to win coins and exchange them for rewards. 4-person project.
-          </p>
-          <p class="technologies">
-            Technologies: Java EE, HTML, CSS, JS, PostgreSQL
-          </p>
-        </div>
-        <div class="project">
-          <h3><a href="https://github.com/ichal6/Mastermind">Mastermind</a></h3>
-          <p class="content">
-            Implementation of a classic game Mastermind with GUI. Individual project.
-          </p>
-          <p class="technologies">
-            Technologies: Python 3, Tkinter, TDD
-          </p>
+          <ol class="experience-description">
+            <h3>Description:</h3>
+            <li>Preparing instructions for migration to a monorepository:
+              <p>During my internship,  three separate repositories were migrated to a single, common repository (for a back-end part). Me and another developer were to prepare instructions for migration for the teams of software testers.</h4>
+            </li>
+            <li>Configure a new backend environment for Docker
+              <p>I streamlined the script for Docker image creation and environment launch. In addition, I efficiently identified non-working tests and rectified them, deactivating them during compilation in the process. Then I was able to fix the script to run Docker.</p>
+            </li>
+            <li>Improving the performance of CI/CD pipeline on Bitbucket
+              <p>We worked together with developers and architects from our team to improved pipeline efficiency by modifying Maven commands, disabling unneeded tests, reducing step repetition, and removing redundant commands, resulting in 40% faster execution.</p>
+            </li>
+            <li>Manual testing procedures for new features and reporting of errors
+              <p>I received training from a tester on my team on the application layout, how to report errors, and how to inform about completed test paths. After the training, I was given several manual tests to perform.</p>
+            </li>
+            <!-- <li>Working on a complex multi-module project written in Java technology</li>
+            <li>Working with unit tests in JUnit5, DBUnit, and DB Rider technology</li>
+            <li>Working in the SCRUM methodology</li>
+            <li>Using Jira tool for team collaboration</li> -->
+          </ol>
         </div>
       </div>
     </main>
   </div>
 </div>
 <div class="page">
+  <div id="projects">
+    <div class="line"></div>
+    <h2>Projects</h2>
+    <div class="project">
+      <h3><a href="https://github.com/ichal6/Follow-the-money-server">Follow the money</a></h3>
+      <p class="content">
+        Web application to track income and spendings for user's financial analysis. 2-person project (now individual)
+      </p>
+      <p class="technologies">
+        Technologies: Java 17, Spring Boot 3, Spring Security – Web Token, Hibernate, PostgreSQL, Angular 15, HTML, CSS, JS, Docker, Junit, CI/CD
+      </p>
+    </div>
+    <div class="project">
+      <h3><a href="https://github.com/ichal6/fsa-backend">Cinemon</a></h3>
+      <p class="content">
+        Web application for films aggregator. 8-person project.
+      </p>
+      <p class="technologies">
+        Technologies: Java 17, Spring Boot 2.7.6, TestContainers, PostgreSQL
+      </p>
+    </div>
+    <div class="project">
+      <h3><a href="https://github.com/ichal6/WdPAI-Lechowicz">Shop Therapy</a></h3>
+      <p class="content">
+        Web application to create shopping lists. Individual project.
+      </p>
+      <p class="technologies">
+        Technologies: PHP 8, MySQL, Vanilla JS
+      </p>
+    </div>
+    <div class="project">
+      <h3><a href="https://github.com/ichal6/QuestStore-WEB-Project">QuestStore</a></h3>
+      <p class="content">
+        Web application for students to win coins and exchange them for rewards. 4-person project.
+      </p>
+      <p class="technologies">
+        Technologies: Java EE, HTML, CSS, JS, PostgreSQL
+      </p>
+    </div>
+    <div class="project">
+      <h3><a href="https://github.com/ichal6/Mastermind">Mastermind</a></h3>
+      <p class="content">
+        Implementation of a classic game Mastermind with GUI. Individual project.
+      </p>
+      <p class="technologies">
+        Technologies: Python 3, Tkinter, TDD
+      </p>
+    </div>
+  </div>
   <div id="education">
     <div class="line"></div>
     <h2>Education</h2>
