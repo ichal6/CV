@@ -19,7 +19,7 @@ jobs:
     - name: html to pdf
       uses: LukaszLapaj/html-to-pdf-action@master
       with:
-        htmlFile: https://ichal6.github.io/CV
+        htmlFile: ./index.html
         outputFile: ./Michał_Lechowicz_Resume.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
