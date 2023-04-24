@@ -1,7 +1,10 @@
 name: Generate PDF
 
 on:
-  page_build
+  push:
+    tags:        
+      - '**' 
+  page_build:
 
 jobs:
   html_to_pdf:
@@ -16,7 +19,7 @@ jobs:
     - name: html to pdf
       uses: LukaszLapaj/html-to-pdf-action@master
       with:
-        htmlFile: https://ichal6.github.io/CV
+        htmlFile: ./index.html
         outputFile: ./Michał_Lechowicz_Resume.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
@@ -26,7 +29,14 @@ jobs:
         name: Resume
         path: ./Michał_Lechowicz_Resume.pdf
 
-    - name: Release
+    - name: Release to main
+      uses: softprops/action-gh-release@v1
+      with:
+        files: Michał_Lechowicz_Resume.pdf
+        tag_name: main
+      if: github.ref == 'refs/heads/master'
+      
+    - name: Release to tag
       uses: softprops/action-gh-release@v1
       with:
         files: Michał_Lechowicz_Resume.pdf
