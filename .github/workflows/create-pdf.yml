@@ -1,9 +1,7 @@
 name: Generate PDF
 
-on: 
-  push:
-    tags:        
-      - '**' 
+on:
+  page_build
 
 jobs:
   html_to_pdf:
