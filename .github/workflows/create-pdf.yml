@@ -29,6 +29,16 @@ jobs:
         name: Resume
         path: ./Michał_Lechowicz_Resume.pdf
 
+    - name: Delete old Resume
+      uses: mknejp/delete-release-assets@v1
+      with:
+        token: ${{ github.token }}
+        tag: main
+        assets: '*.*'
+        fail-if-no-assets: false
+        fail-if-no-release: false
+      if: github.ref == 'refs/heads/master'
+
     - name: Release to main
       uses: softprops/action-gh-release@v1
       with:
@@ -41,4 +51,3 @@ jobs:
       with:
         files: Michał_Lechowicz_Resume.pdf
       if: startsWith(github.ref, 'refs/tags/')
-
