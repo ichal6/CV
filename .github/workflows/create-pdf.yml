@@ -34,7 +34,7 @@ jobs:
       with:
         token: ${{ github.token }}
         tag: main
-        assets: *.pdf
+        assets: '*.*'
         fail-if-no-assets: false
         fail-if-no-release: false
       if: github.ref == 'refs/heads/master'
