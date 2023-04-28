@@ -14,8 +14,8 @@ html,body{
 /*Format content*/
 
 #profile-photo{
-    width: 20%;
-    height: 20%;
+    width: 103px;
+    height: 121px;
     border-radius: 50px;
     border-color: #d6ba9f;
     border-style: solid;
@@ -28,11 +28,12 @@ header{
     flex-direction: row;
     justify-content: space-between;
     margin-left: 45px;
+    margin-bottom: 5px;
 }
 
 #information{
     flex-basis: 100%;
-    margin-left: 100px;
+    margin-left: 120px;
 }
 
 #personal{
