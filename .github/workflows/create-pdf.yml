@@ -30,13 +30,13 @@ jobs:
         path: ./Michał_Lechowicz_Resume.pdf
 
     - name: Delete old Resume
-        uses: mknejp/delete-release-assets@v1
-        with:
-          token: ${{ github.token }}
-          tag: main
-          assets: *.*
-          fail-if-no-assets: false
-          fail-if-no-release: false
+      uses: mknejp/delete-release-assets@v1
+      with:
+        token: ${{ github.token }}
+        tag: main
+        assets: *.*
+        fail-if-no-assets: false
+        fail-if-no-release: false
       if: github.ref == 'refs/heads/master'
 
     - name: Release to main
