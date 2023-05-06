@@ -1,12 +1,6 @@
 name: Generate PDF
 
 on:
-  workflow_dispatch:
-    inputs:
-      language:
-        description: "give the language"
-        default: "en"
-        type: "string"
   push:
     tags:        
       - '**' 
@@ -24,13 +18,14 @@ jobs:
 
     - name: Set language
       env: 
-        github.event.inputs.language: 'pl'
-      if: startsWith(github.ref, 'refs/tags/lang')
+        LANGUAGE: 'pl'
+      run: echo "Language $"
+      if: startsWith(github.ref, 'refs/tags/pl')
 
     - name: html to pdf
       uses: LukaszLapaj/html-to-pdf-action@master
       with:
-        htmlFile: ./index.html?lang='${{github.event.inputs.language}}'
+        htmlFile: ./index.html?lang='${{LANGUAGE}}'
         outputFile: ./Michał_Lechowicz_Resume.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
