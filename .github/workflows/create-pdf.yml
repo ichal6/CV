@@ -19,7 +19,7 @@ jobs:
     - name: html to pdf
       uses: LukaszLapaj/html-to-pdf-action@master
       with:
-        htmlFile: ./index.html
+        htmlFile: ./index.html?lang=pl
         outputFile: ./Michał_Lechowicz_Resume.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
