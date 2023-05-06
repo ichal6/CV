@@ -151,6 +151,11 @@ header{
     font-size: 18px;
 }
 
+#technical-stack dd a {
+    color: #5f9401;
+    text-decoration: none;
+}
+
 #languages>dl>dd{
     display: list-item;
     list-style-type: disc;
