@@ -5,6 +5,8 @@
     <title>Michał Lechowicz CV</title>
     <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
     <link rel="stylesheet" href="style.css" />
+    <script defer src="js/translate.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
 <body>
 <div class="page">
@@ -15,7 +17,7 @@
             <div id="name">
               Michał Lechowicz
             </div>
-            <div id="description" >
+            <div data-tag="personal-description" id="description" >
               4th year IT student
             </div>
           </div>
@@ -32,7 +34,7 @@
         </div>
         <div id="telephone">
           <a class="links" href="tel:+48691358571" >
-            <p><img alt="phone icon" src="assets/icons/telephone.png"/>Telephone:</p> +48 691 358 571
+            <p><img alt="phone icon" src="assets/icons/telephone.png"/><span data-tag="telephone">Telephone:</span></p> +48 691 358 571
           </a>
         </div>
         <div id="linkedin">
@@ -47,7 +49,7 @@
           </a>
         </div>
         <div id="live-demo">
-          <p><img alt="demo icon" src="assets/icons/demo.png" />Web App Demos:</p>
+          <p><img alt="demo icon" src="assets/icons/demo.png" /><span data-tag="web-app-demo">Web App Demos:</span></p>
           <ul>
             <li><a href="https://ichal6.github.io/Follow-the-money-Client/login">Follow the money</a></li>
             <li><a href="https://shoptherapy.herokuapp.com">Shop Therapy</a></li>
@@ -55,38 +57,43 @@
         </div>
       </div>
       <dl id="technical-stack">
-        <dt>Technical Stack</dt>
-        <dt>Main:</dt>
-        <dd>Java</dd>
+        <dt data-tag="technical-stack">Technical Stack</dt>
+        <dt data-tag="technical-main">Main:</dt>
+        <dd><a href="https://github.com/ichal6?tab=repositories&q=&type=&language=java">Java</a></dd>
         <dd>Spring</dd>
         <dd>Spring Boot</dd>
         <dd>Hibernate</dd>
-        <dt id="secondary">Secondary:</dt>
+        <dt data-tag="technical-secondary" id="secondary">Secondary:</dt>
+        <dd>REST</dd>
+        <dd>SQL</dd>
+        <dd>PostgreSQL</dd>
+        <dd>NoSQL</dd>
+        <dd>MongoDB</dd>
         <dd>Docker</dd>
+        <dd>Maven</dd>
         <dd>GitHub Action</dd>
         <dd>TDD</dd>
         <dd>Unit tests</dd>
+        <dd><a href="https://github.com/ichal6?tab=repositories&q=&type=&language=kotlin">Kotlin</a></dd>
         <dd>CSS</dd>
         <dd>HTML</dd>
         <dd>Git</dd>
         <dd>GitHub</dd>
         <dd>JavaScript</dd>
-        <dd>MongoDB</dd>
         <dd>Angular</dd>
-        <dd>PostgreSQL</dd>
         <dd>PL/SQL</dd>
         <dd>PHP</dd>
       </dl>
       <div id="languages">
         <dl>
-          <dt>Language level:</dt>
-          <dd>Polish - Native</dd>
-          <dd>English - B2</dd>
+          <dt data-tag="language">Language level:</dt>
+          <dd data-tag="language-polish">Polish - Native</dd>
+          <dd data-tag="language-english">English - B2</dd>
         </dl>
       </div>
       <div id="hobby">
-        <p>Beyond coding:</p>
-        <div id="hobby-content">
+        <p data-tag="hobby">Beyond coding:</p>
+        <div data-tag="hobby-content" id="hobby-content">
           I like playing board games, chess, and 
           adventure video games. Apart from that, I read blogs
           about new technologies.<br> In addition, I am a
@@ -97,45 +104,45 @@
       </div>
     </aside>
     <main>
-      <div id="about">
+      <div class="box" id="about">
         <div class="line"></div>
-        <h2>About me</h2>
-        <p id="about-content">
+        <h2 data-tag="about-me">About me</h2>
+        <p data-tag="about-content" id="about-content">
           I am a 4th-year student of the Faculty of Computer Science and Telecommunications at Cracow University of Technology. I have been fascinated by computer science since an early age. For over three years I have been learning web technologies. I have been creating in Java / Spring Boot and Angular. I have been learning to code for the last four years, both independently, at the university, and with a group at the programming school. Now I want to use my skills outside the university world.
         </p>
       </div>
-      <div id="experiences">
+      <div class="box" id="experiences">
         <div class="line"></div>
-        <h2>Experiences</h2>
+        <h2 data-tag="experience">Experiences </h2>
         <div class="experience">
           <div class="experience-photo-info">
             <a href="https://www.euvic.com/pl/"><img src="assets/icons/euvic.png" alt="Euvic logo"/></a>
             <div class="experience-info">
               <h3>Junior Java Developer</h3>
               <p class="place">Euvic</p>
-              <p class="position">Internship</p>
-              <p class="duration"> 5 Sep 2022 to 5 Oct 2022</p>
-              <p class="location">Remote</p>
+              <p data-tag="euvic-position" class="position">Internship</p>
+              <p data-tag="euvic-time" class="duration"> 5 Sep 2022 to 5 Oct 2022</p>
+              <p data-tag="euvic-location" class="location">Remote</p>
             </div>
           </div>
           <ol class="experience-description">
-            <h3>Description:</h3>
-            <li>Preparing instructions for migration to a monorepository:
-              <p>During my internship,  three separate repositories were migrated to a single, common repository (for a back-end part). Me and another developer were to prepare instructions for migration for teams of software testers.</h4>
+            <h3 data-tag="experience-description">Description:</h3>
+            <li><div data-tag="euvic-1">Preparing instructions for migration to a monorepository:</div>
+              <p data-tag="euvic-1-description">During my internship,  three separate repositories were migrated to a single, common repository (for a back-end part). Me and another developer were to prepare instructions for migration for other developer's teams.</p>
             </li>
-            <li>Configure a new backend environment for Docker:
-              <p>I streamlined the script for Docker image creation and environment launch. In addition, I efficiently identified non-working tests and rectified them, deactivating them during compilation in the process. Then I was able to fix the script to run Docker.</p>
+            <li><div data-tag="euvic-2">Setting up a new backend environment for Docker:</div>
+              <p data-tag="euvic-2-description">I streamlined the script for creating a Docker image and launching the environment. In addition, I efficiently identified the non-working tests and deactivated them. Next, I fixed the script used to put up Docker.</p>
             </li>
-            <li>Improving the performance of CI/CD pipeline on Bitbucket:
-              <p>We worked together with developers and architects from our team to improved pipeline efficiency by modifying Maven commands. We disabled unneeded tests, reduced step repetition, and removed redundant commands, resulting in 40% faster execution.</p>
+            <li><div data-tag="euvic-3">Improving the performance of CI/CD pipeline on Bitbucket:</div>
+              <p data-tag="euvic-3-description">We worked together with developers and architects from our team to improved pipeline efficiency by modifying Maven commands. We disabled unneeded tests, reduced step repetition, and removed redundant commands, resulting in 40% faster execution.</p>
             </li>
-            <li>Manual testing procedures for new features and reporting of errors:
-              <p>I received training from a tester on my team on the application layout, how to report errors, and how to inform about completed test paths. After the training, I was given several manual tests to perform.</p>
+            <li><div data-tag="euvic-4">Manual testing for new features and reporting of errors:</div>
+              <p data-tag="euvic-4-description">I received training from a tester on my team on the application layout, how to report errors, and how to inform about completed test paths. After the training, I was given several manual tests to perform.</p>
             </li>
-            <li>Working on a complex multi-module project written in Java technology</li>
-            <li>Working with unit tests in JUnit5, DBUnit, and DB Rider technology</li>
-            <li>Working in the SCRUM</li>
-            <li>Using Jira tool for team collaboration</li>
+            <li data-tag="euvic-5">Working on a complex multi-module project written in Java/Spring technology</li>
+            <li data-tag="euvic-6">Working with unit tests in JUnit5, DBUnit, and DB Rider technology</li>
+            <li data-tag="euvic-7">Working in the SCRUM</li>
+            <li data-tag="euvic-8">Using Jira tool for team collaboration</li>
           </ol>
         </div>
       </div>
@@ -143,30 +150,39 @@
   </div>
 </div>
 <div class="page">
-  <div id="projects">
+  <div class="box" id="projects">
     <div class="line"></div>
-    <h2>Projects</h2>
+    <h2 data-tag="projects">Projects</h2>
     <div class="project">
       <h3><a href="https://github.com/ichal6/Follow-the-money-server">Follow the money</a></h3>
-      <p class="content">
-        Web application to track income and spendings for user's financial analysis. 2-person project (now individual)
+      <p data-tag="ftm-description" class="content">
+        Web application to track income and spendings for user's financial analysis. 2-person project (now individual).
       </p>
       <p class="technologies">
-        Technologies: Java 17, Spring Boot 3, Spring Security – Web Token, Hibernate, PostgreSQL, Angular 15, HTML, CSS, JS, Docker, Junit, CI/CD
+        Technologies: Java 17, Spring Boot 3, Spring Security – Web Token, Liquibase, TestContainers, Hibernate, PostgreSQL, Angular 15, HTML, CSS, JS, Docker, JUnit, CI/CD
       </p>
     </div>
     <div class="project">
       <h3><a href="https://github.com/ichal6/fsa-backend">Cinemon</a></h3>
-      <p class="content">
+      <p data-tag="cinammon-description" class="content">
         Web application for films aggregator. 8-person project.
       </p>
       <p class="technologies">
-        Technologies: Java 17, Spring Boot 2.7.6, TestContainers, PostgreSQL
+        Technologies: Java 17, Spring Boot 2.7.6, TestContainers, JUnit5, PostgreSQL
+      </p>
+    </div>
+    <div class="project">
+      <h3><a href="https://github.com/GangOfThreeWMD/PJN-Backend">ClipSum</a></h3>
+      <p data-tag="clipsum-description" class="content">
+        Web application for summarize articles from the biggest news services. 3-person project.
+      </p>
+      <p class="technologies">
+        Technologies: Java 17, Spring Boot 3, Spring Cache, Lombok, <a href="https://github.com/ninia/jep">JEP(Java Embedded Python)</a>, JSoup, Maven multi-module, Python 3, NLTK, NetworkX
       </p>
     </div>
     <div class="project">
       <h3><a href="https://github.com/ichal6/WdPAI-Lechowicz">Shop Therapy</a></h3>
-      <p class="content">
+      <p data-tag="shoptherapy-description" class="content">
         Web application to create shopping lists. Individual project.
       </p>
       <p class="technologies">
@@ -175,7 +191,7 @@
     </div>
     <div class="project">
       <h3><a href="https://github.com/ichal6/QuestStore-WEB-Project">QuestStore</a></h3>
-      <p class="content">
+      <p data-tag="queststore-description" class="content">
         Web application for students to win coins and exchange them for rewards. 4-person project.
       </p>
       <p class="technologies">
@@ -184,7 +200,7 @@
     </div>
     <div class="project">
       <h3><a href="https://github.com/ichal6/Mastermind">Mastermind</a></h3>
-      <p class="content">
+      <p data-tag="mastermind-description" class="content">
         Implementation of a classic game Mastermind with GUI. Individual project.
       </p>
       <p class="technologies">
@@ -192,39 +208,39 @@
       </p>
     </div>
   </div>
-  <div id="education">
+  <div class="box" id="education">
     <div class="line"></div>
-    <h2>Education</h2>
+    <h2 data-tag="education">Education</h2>
     <div id="schools">
       <div class="school">
         <img class="school-icon" alt="school icon" src="assets/icons/pk.png" >
         <div class="school-info">
-          <h3 class="course-name">Information Technology, Engineer’s degree</h3>
-          <p class="school-name">Cracow University of Technology</p>
-          <p class="school-time">October 2018 – June 2019, October 2020 – now</p>
+          <h3 data-tag="pk-course-name" class="course-name">Information Technology, Engineer’s degree</h3>
+          <p data-tag="pk-name" class="school-name">Cracow University of Technology</p>
+          <p data-tag="pk-time" class="school-time">October 2018 – June 2019, October 2020 – now</p>
         </div>
       </div>
       <div class="school">
         <img class="school-icon" alt="school icon" src="assets/icons/codecool.png" >
         <div class="school-info">
           <h3 class="course-name">Full-stack Java Developer</h3>
-          <p class="school-name">“Codecool” Programming School</p>
-          <p class="school-time">January 2020 – October 2020</p>
-          <p class="curriculum">CURRICULUM: Java, SQL, design pattern (ex. MVC,
+          <p data-tag="codecool-name" class="school-name">“Codecool” Programming School</p>
+          <p data-tag="codecool-ft-time" class="school-time">January 2020 – October 2020</p>
+          <p data-tag="codecool-ft-curriculum" class="curriculum">CURRICULUM: Java, SQL, design pattern (ex. MVC,
             DAO, Builder), JavaScript, CSS, HTML, Java EE,
             Spring, Spring Boot</p>
         </div>
         <div class="school-info">
           <h3 class="course-name">Programming Basics</h3>
-          <p class="school-name">“Codecool” Programming School,</p>
-          <p class="school-time">June 2019 – October 2019</p>
-          <p class="curriculum">CURRICULUM: Basics of Python, Clean code, Git, unit
+          <p data-tag="codecool-name" class="school-name">“Codecool” Programming School,</p>
+          <p data-tag="codecool-basic-time" class="school-time">June 2019 – October 2019</p>
+          <p data-tag="codecool-basic-curriculum" class="curriculum">CURRICULUM: Basics of Python, Clean code, Git, unit
             tests, SCRUM</p>
         </div>
       </div>
     </div>
   </div>
-  <footer id="gdpr">
+  <footer data-tag="gdpr" id="gdpr">
     <p>I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).</p>
   </footer>  
 </div>

@@ -119,6 +119,7 @@ header{
     align-items: center;
     justify-content: center;
     letter-spacing: .2rem;
+    margin-bottom: 3px;
 }
 
 #hobby>p {
@@ -151,6 +152,11 @@ header{
     font-size: 18px;
 }
 
+#technical-stack dd a {
+    color: #5f9401;
+    text-decoration: none;
+}
+
 #languages>dl>dd{
     display: list-item;
     list-style-type: disc;
@@ -174,6 +180,7 @@ header{
     position: relative;
     top:13px;
     z-index: -1;
+    width: 100%;
 }
 
 #content{
@@ -223,7 +230,7 @@ main{
 }
 
 .school-info{
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
 }
@@ -306,4 +313,15 @@ main{
     font-size: 12px;
 }
 
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project {
+    align-self: flex-start;
+}
 
