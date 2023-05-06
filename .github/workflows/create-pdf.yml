@@ -23,7 +23,8 @@ jobs:
         fetch-depth: 1
 
     - name: Set language
-      env: github.event.inputs.language: 'pl'
+      env: 
+        github.event.inputs.language: 'pl'
       if: startsWith(github.ref, 'refs/tags/lang')
 
     - name: html to pdf
