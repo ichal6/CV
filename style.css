@@ -288,7 +288,7 @@ main{
     font-style: italic;
 }
 
-.project>h3>a{
+.project>h3>a, .link{
     text-decoration:none;
     color: #5f9401;
 }
