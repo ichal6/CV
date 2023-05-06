@@ -1,6 +1,12 @@
 name: Generate PDF
 
 on:
+  workflow_dispatch:
+    inputs:
+      language:
+        description: "give the language"
+        default: "en"
+        type: "string"
   push:
     tags:        
       - '**' 
@@ -19,7 +25,7 @@ jobs:
     - name: html to pdf
       uses: LukaszLapaj/html-to-pdf-action@master
       with:
-        htmlFile: ./index.html?lang=pl
+        htmlFile: ./index.html?lang='${{github.event.inputs.language}}'
         outputFile: ./Michał_Lechowicz_Resume.pdf
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
