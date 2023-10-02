@@ -22,7 +22,7 @@
     "euvic-2" : "Konfiguracja nowego środowiska backendowego dla Dockera:",
     "euvic-2-description": "Usprawniłem skrypt do tworzenia obrazu Dockera i uruchamiania środowiska. Dodatkowo sprawnie zidentyfikowałem niedziałające testy i je wyłączyłem. Następnie naprawiłem skrypt służący do postawienia Dockera.",
     "euvic-3": "Poprawa wydajności procesu CI/CD na Bitbucket:",
-    "euvic-3-description": "Współpracowaliśmy z programistami i architektami z naszego zespołu, aby poprawić wydajność procesu CI/CD poprzez modyfikację poleceń Mavena. Wyłączyliśmy niepotrzebne testy, zredukowaliśmy powtarzanie tych samych kroków i usunęliśmy zbędne polecenia, co zaowocowało 40% szybszym wykonaniem.",
+    "euvic-3-description": "Współpracowaliśmy z programistami i architektami z naszego zespołu, aby poprawić wydajność procesu CI/CD poprzez modyfikację poleceń Mavena. Wyłączyliśmy niepotrzebne testy, zredukowaliśmy powtarzanie tych samych kroków i usunęliśmy zbędne polecenia.",
     "euvic-4": "Testowanie ręczne nowych funkcji i zgłaszanie błędów:",
     "euvic-4-description": "Tester z mojego zespołu przeprowadził szkolenie na temat układu aplikacji, sposobu zgłaszania błędów oraz informowania o zakończonych przypadkach testowych. Po szkoleniu otrzymałem do wykonania kilka testów manualnych.",
     "euvic-5": "Praca nad złożonym, wielomodułowym projektem napisanym w&nbsp;technologii Java/Spring;",
