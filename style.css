@@ -303,6 +303,10 @@ main{
     margin-top: 3px;
 }
 
+.content, .technologies {
+    text-indent: 1em;
+}
+
 .school-icon{
     width: 60px !important;
     height: 60px;
