@@ -32,7 +32,7 @@
     "projects": "Projekty",
     "ftm-description": "Aplikacja internetowa do śledzenia dochodów i wydatków służąca do analizy finansowej użytkownika. Projekt 2-osobowy (obecnie indywidualny). Projekt został wykorzystany w mojej pracy inżynierskiej.",
     "ftm-technologies": "Technologie: Java 17, Spring Boot 3, Spring Security – Web Token, Liquibase, TestContainers, Hibernate, PostgreSQL, Angular 16, HTML, CSS, JS, Docker, JUnit, CI/CD",
-    "q&a-description": "Aplikacja internetowa do nauki pytań rekrutacyjnych. Projekt indywidualny",
+    "q&a-description": "Aplikacja internetowa do nauki pytań rekrutacyjnych. Projekt indywidualny.",
     "q&a-technologies": "Technologie: Java 17, Spring Boot 3.1, Spring Security – Web Token, Spring HATEOAS, MongoDB,   Angular 17",
     "cinammon-description": "Aplikacja webowa do agregowania filmów nadawanych w kinach. Projekt 8-osobowy.",
     "clipsum-description": "Aplikacja webowa do streszczania artykułów z największych serwisów informacyjnych. Projekt 3-osobowy.",
