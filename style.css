@@ -1,9 +1,11 @@
 /*Format document*/
 html,body{
     width: 210mm;
-    background-image: url("assets/background/bg-1.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
+}
+
+header {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .page{
@@ -22,24 +24,30 @@ html,body{
     border-width: 3px;
 }
 
-header{
+#general-information{
     display: flex;
-    width: calc(100% + 0.5cm - 45px);
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 45px;
+    margin-left: 15px;
     margin-bottom: 5px;
 }
 
 #information{
     flex-basis: 100%;
-    margin-left: 120px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #personal{
-    margin-top: 50px;
     border: #d6ba9f solid 4px;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+    width: 80%;
 }
 
 #name {
@@ -60,7 +68,9 @@ header{
 
 #contact{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
 }
 
 #contact>div{
@@ -74,9 +84,11 @@ header{
     font-size: 20px;
 }
 
-#contact>div>a>p>img, #live-demo>img{
+#contact>div>a>p>img, .icon-demo{
     width: 20px;
     margin-right: 5px;
+    height: min-content;
+    align-self: center;
 }
 
 .links{
@@ -87,47 +99,13 @@ header{
 
 .links>p{
     margin: 2px;
-}
-
-#live-demo{
-    height: 95px;
-}
-
-#live-demo>p{
     display: flex;
-    align-items: center;
-    font-size: 20px;
-    margin: 0;
-}
-
-#live-demo>p>img{
-    width: 10%;
-    padding-right: 5px;
-}
-
-#live-demo>ul>li{
-    margin-bottom: 5px;
+    justify-content: center;
 }
 
 #technical-stack, #hobby-content {
     text-align: justify;
     font-family: "arial", Helvetica, sans-serif;
-}
-
-#technical-stack>dt, #languages>dl>dt, #hobby>p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: .2rem;
-    margin-bottom: 3px;
-}
-
-#hobby>p {
-    margin-bottom: 6px;
-}
-
-#secondary {
-    margin-top: 10px;
 }
 
 #technical-stack>dd{
@@ -144,12 +122,8 @@ header{
     content: "";
 }
 
-#technical-stack dd:not(:first-child) {
-    font-size: 14px;
-}
-
-#technical-stack dd:nth-child(n+3):nth-child(-n+6) {
-    font-size: 18px;
+#technical-stack dd {
+    font-size: 16px;
 }
 
 #technical-stack dd a {
@@ -157,21 +131,34 @@ header{
     text-decoration: none;
 }
 
-#languages>dl>dd{
-    display: list-item;
-    list-style-type: disc;
-    margin-left: 60px;
+#languages>dl {
+    align-self: flex-start;
+    margin-left: 15px;
 }
 
-#about>h2, #experiences>h2, #projects>h2, #education>h2 {
+#languages>dl>dd{
+    display: list-item;
+    list-style-type: circle;
+    margin-left: 60px;
+    margin-inline-start: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#languages>dl>dd>span {
+    font-weight: normal;
+}
+
+.box>h2 {
     text-align: center;
+    align-self: flex-start;
     font-family: "Century Gothic Bold", arial, serif;
     font-size: 16px;
     background-color: #3b3b3b;
     color: white;
     letter-spacing: .2rem;
     padding:3px 15px;
-    margin:0 150px 0 150px;
+    margin:0 150px 0 75px;
 }
 
 .line{
@@ -183,21 +170,11 @@ header{
     width: 100%;
 }
 
-#content{
-    display: grid;
-    grid-template-columns: 250px 480px;
-}
-
 #about-content{
     font-family: "Century Gothic ", arial, serif;
     text-align: justify;
     margin: 5px 0 10px;
     font-size: 16px;
-}
-
-aside{
-    margin-right: 10px;
-    margin-left: -0.5cm;
 }
 
 main{
@@ -217,12 +194,14 @@ main{
 .experience {
     display: flex;
     flex-direction: column;
+    margin-left: 40px;
 }
 
 .experience-photo-info {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .experience-photo-info>a>img{
@@ -234,6 +213,7 @@ main{
     display: flex;
     flex-direction: column;
 }
+
 
 .experience-info>*, .project>* , .school>*, .school-info>*, .experience-description>* {
     margin: 2px;
@@ -250,13 +230,14 @@ main{
 
 .experience-description {
     margin-top: 0;
+    padding-inline-start: 0;
 }
 
 .experience-description > li {
     margin-top: 6px;
 }
 
-.experience-description > li > p {
+.experience-description > li > p, .description-euvic {
     text-align: justify;
     font-style: italic;
     margin-top: 6px;
@@ -270,9 +251,14 @@ main{
     color: #3b3b3b;
 }
 
-.experience-description>li::first-letter {
+.experience-description>li::first-letter, #about-content>li::first-letter {
     font-weight: bold;
     color: #a7560b;
+    font-size: 15px;
+}
+
+.description-euvic {
+    padding-inline-start: 20px;
 }
 
 .place{
@@ -281,7 +267,8 @@ main{
 }
 
 .project{
-    margin-bottom: 15px;
+    margin-bottom: 6px;
+    align-self: flex-start;
 }
 
 .project>h3{
@@ -293,9 +280,12 @@ main{
     color: #5f9401;
 }
 
-.technologies{
+.technologies, .team{
     font-style: italic;
     color: #3b3b3b;
+}
+
+.technologies {
     margin-top: 6px;
 }
 
@@ -303,7 +293,7 @@ main{
     margin-top: 3px;
 }
 
-.content, .technologies {
+.content, .technologies, .team {
     text-indent: 1em;
 }
 
@@ -314,6 +304,7 @@ main{
 }
 
 #gdpr{
+    margin-top: 10px;
     font-size: 12px;
 }
 
@@ -324,8 +315,3 @@ main{
     justify-content: center;
     align-items: center;
 }
-
-.project {
-    align-self: flex-start;
-}
-
