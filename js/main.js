@@ -21,6 +21,6 @@ const userLang = urlParams.get("lang") || navigator.language.slice(0, 2);
 
 load(userLang, 'data-tag');
 
-let el = document.querySelectorAll("h1, h2, h3, h4, h5, p, span, .text");
+let el = document.querySelectorAll("h1, h2, h3, h4, h5, p, span, .text, .about-point");
 
 lastSingleLetterToNewLine(el);
