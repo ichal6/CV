@@ -271,11 +271,11 @@ main{
     align-self: flex-start;
 }
 
-.project>h3{
+.project>h3, .project>h4>span {
     font-style: italic;
 }
 
-.project>h3>a, .link{
+.project>h4>a, .link{
     text-decoration:none;
     color: #5f9401;
 }
