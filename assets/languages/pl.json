@@ -22,7 +22,7 @@
     "experience-description": "Opis stanowiska:",
     "euvic-1": "Przygotowanie <strong>instrukcji migracji do monorepozytorium:</strong>",
     "euvic-1-description-1": "Podczas moich praktyk, trzy oddzielne repozytoria były migrowane do jednego wspólnego repozytorium.",
-    "euvic-1-description-2": "Wraz z drugim programistą mieliśmy za zadanie przygotować instrukcję migracji dla innych zespołów developerskich. Gotowa instrukcja została dodana do dokuemntacji aplikacji.",
+    "euvic-1-description-2": "Wraz z drugim programistą mieliśmy za zadanie przygotować instrukcję migracji dla innych zespołów developerskich. Gotowa instrukcja została dodana do dokumentacji aplikacji.",
     "euvic-2" : "Konfiguracja nowego <strong>środowiska backendowego dla Dockera:</strong>",
     "euvic-2-description-1": "Usprawniłem skrypt do tworzenia obrazu Dockera i uruchamiania środowiska.",
     "euvic-2-description-2": "Dodatkowo sprawnie zidentyfikowałem niedziałające testy i je wyłączyłem.",
