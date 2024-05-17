@@ -8,14 +8,13 @@ header {
     margin-right: 10px;
 }
 
-#content {
-    /*height: 297mm;*/
+#content-data {
     display: block;
     margin: 0 1cm 1cm;
     padding-bottom: 10mm;
 }
-/*Format content*/
 
+/*Format content*/
 #profile-photo{
     width: 103px;
     height: 121px;
@@ -315,7 +314,6 @@ footer {
     background-color: #edd6c1;
     width: 210mm;
 }
-
 
 .box {
     display: flex;
