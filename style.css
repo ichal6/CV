@@ -306,13 +306,14 @@ footer {
 
 .gdpr{
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 10px;
     position: fixed;
-    bottom: 0; /* Adjust based on page margins */
+    bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
     background-color: rgba(223, 62, 62, 0.1);
+    width: 210mm;
 }
 
 
@@ -321,4 +322,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+tfoot {
+    height: 20mm;
 }
