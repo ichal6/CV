@@ -8,13 +8,13 @@ header {
     margin-right: 10px;
 }
 
-.page{
-    height: 297mm;
+#content-data {
     display: block;
     margin: 0 1cm 1cm;
+    padding-bottom: 10mm;
 }
-/*Format content*/
 
+/*Format content*/
 #profile-photo{
     width: 103px;
     height: 121px;
@@ -108,29 +108,6 @@ header {
     font-family: "arial", Helvetica, sans-serif;
 }
 
-#technical-stack>dd{
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-}
-
-#technical-stack dd:after{
-    content: ", ";
-}
-
-#technical-stack dd:last-child:after{
-    content: "";
-}
-
-#technical-stack dd {
-    font-size: 16px;
-}
-
-#technical-stack dd a {
-    color: #5f9401;
-    text-decoration: none;
-}
-
 #languages>dl {
     align-self: flex-start;
     margin-left: 15px;
@@ -149,9 +126,17 @@ header {
     font-weight: normal;
 }
 
-.box>h2 {
+.header-line {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    break-inside: avoid;
+}
+
+.header-line>h2 {
     text-align: center;
-    align-self: flex-start;
     font-family: "Century Gothic Bold", arial, serif;
     font-size: 16px;
     background-color: #3b3b3b;
@@ -175,10 +160,6 @@ header {
     text-align: justify;
     margin: 5px 0 10px;
     font-size: 16px;
-}
-
-#experiences>h2, #education>h2 {
-    margin-bottom: 10px;
 }
 
 .school {
@@ -226,6 +207,7 @@ header {
 
 .experience-description {
     margin-top: 0;
+    margin-bottom: 0;
     padding-inline-start: 0;
 }
 
@@ -301,13 +283,24 @@ header {
 
 .gdpr{
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #edd6c1;
+    width: 210mm;
 }
-
 
 .box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /*border-top: solid #d6ba9f;*/
+}
+
+tfoot {
+    height: 20mm;
 }
