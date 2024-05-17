@@ -8,10 +8,11 @@ header {
     margin-right: 10px;
 }
 
-.page{
-    height: 297mm;
+#content {
+    /*height: 297mm;*/
     display: block;
     margin: 0 1cm 1cm;
+    padding-bottom: 10mm;
 }
 /*Format content*/
 
@@ -299,9 +300,19 @@ header {
     margin-right: 10px;
 }
 
+footer {
+    margin-top: 100px;
+}
+
 .gdpr{
     margin-top: 10px;
     font-size: 12px;
+    position: fixed;
+    bottom: 0; /* Adjust based on page margins */
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: rgba(223, 62, 62, 0.1);
 }
 
 
