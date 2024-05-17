@@ -108,29 +108,6 @@ header {
     font-family: "arial", Helvetica, sans-serif;
 }
 
-#technical-stack>dd{
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-}
-
-#technical-stack dd:after{
-    content: ", ";
-}
-
-#technical-stack dd:last-child:after{
-    content: "";
-}
-
-#technical-stack dd {
-    font-size: 16px;
-}
-
-#technical-stack dd a {
-    color: #5f9401;
-    text-decoration: none;
-}
-
 #languages>dl {
     align-self: flex-start;
     margin-left: 15px;
@@ -297,10 +274,6 @@ header {
     width: 60px !important;
     height: 60px;
     margin-right: 10px;
-}
-
-footer {
-    margin-top: 100px;
 }
 
 .gdpr{
