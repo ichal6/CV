@@ -305,8 +305,21 @@ tfoot {
     height: 20mm;
 }
 
-#edit-content {
+#edit-menu {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+/* Style for the input field */
+.input-field {
+    position: absolute;
+    display: none;
+    padding: 5px;
+    width:fit-content;
+}
+
+#contextMenu {
+    position: absolute;
+    display: none;
 }
