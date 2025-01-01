@@ -15,9 +15,24 @@ function lastSingleLetterToNewLine(el){
     });
 }
 
+function initializeEditMode(editMode) {
+    if(editMode) {
+        fetch('edit.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('edit-content').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading edit mode:', error));
+    }
+}
+
 // Parse language parameter from URL (default to browser language if not specified)
 const urlParams = new URLSearchParams(window.location.search);
 const userLang = urlParams.get("lang") || navigator.language.slice(0, 2);
+
+const editMode = urlParams.has("edit") && urlParams.get("edit") == "yes";
+
+initializeEditMode(editMode);
 
 load(userLang, 'data-tag');
 

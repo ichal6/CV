@@ -304,3 +304,9 @@ header {
 tfoot {
     height: 20mm;
 }
+
+#edit-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
