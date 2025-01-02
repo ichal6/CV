@@ -21,7 +21,7 @@ function initializeEditMode(editMode) {
             .then(response => response.text())
             .then(data => {
                 document.getElementById('edit-content').innerHTML = data;
-                temp();
+                toggleEditMode();
             })
             .catch(error => console.error('Error loading edit mode:', error));
     }
@@ -38,7 +38,6 @@ function getDataTagFromClick() {
         }
     });
 }
-
 
 function handleClick(event) {
     const inputField = document.getElementById('input-field');
@@ -73,19 +72,16 @@ function handleClick(event) {
     };
 };
 
-function temp() {
-     // Select the table, context menu, input field, and buttons
-     const table = document.getElementById('table');
-     const selectButton = document.getElementById('selectButton');
+function toggleEditMode() {
+    const table = document.getElementById('table');
+    const selectButton = document.getElementById('selectButton');
 
-     // Flag to determine if logging is enabled
-     let loggingEnabled = false;
+    let editEnabled = false;
 
-     // Toggle logging functionality
     selectButton.addEventListener('click', () => {
-        loggingEnabled = !loggingEnabled;
-        selectButton.textContent = loggingEnabled ? 'Disable Data Tag Logging' : 'Enable Data Tag Logging';
-        if(loggingEnabled)
+        editEnabled = !editEnabled;
+        selectButton.textContent = editEnabled ? 'Disable edit mode' : 'Enable edit mode';
+        if(editEnabled)
             table.addEventListener('click', handleClick);
         else
             table.removeEventListener('click', handleClick);
