@@ -1,82 +1,92 @@
 class EditMode {
-    constructor() {
-        this.initializeEditMode();
-        this.handleClick = this.handleClick.bind(this); // Bind the method
+    #langDictionary;
+    #currentURL;
+    #currentObject;
+    #inputField;
+    #actualDataTag;
+    #userLang;
+
+    constructor(langDictionary, userLang) {
+        this.#initializeEditMode();
+        this.handleClick = this.handleClick.bind(this);
+        this.saveChanges = this.saveChanges.bind(this);
+        this.#langDictionary = langDictionary;
+        this.#userLang = userLang;
     }
    
-    initializeEditMode() {
+    #initializeEditMode() {
         fetch('edit.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('edit-content').innerHTML = data;
-                this.toggleEditMode();
+                this.#toggleEditMode();
+                
+                const saveBtn = document.getElementById('save-btn');
+                saveBtn.addEventListener("click", this.saveChanges);
+                
+                this.#inputField  = document.getElementById('input-field');
+                this.#addBehaviorToInput();
             })
             .catch(error => console.error('Error loading edit mode:', error));
     }
 
-    toggleEditMode() {
+    #addBehaviorToInput() {
+        // Adjust the width of the input field as the user types
+        this.#inputField.addEventListener('input', () => {
+            this.#adjustInputWidth(this.#inputField);
+        });
+
+        const saveFunction = () => {
+            this.#currentObject.innerHTML = this.#inputField.value;
+            
+            lastSingleLetterToNewLine([this.#currentObject]);
+
+            this.#langDictionary[this.#actualDataTag] = this.#inputField.value;
+
+            this.#inputField.style.display = 'none';
+        }
+
+        this.#inputField.onblur = saveFunction;
+
+        this.#inputField.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                saveFunction();
+            }
+        });
+    }
+
+    #toggleEditMode() {
         const table = document.getElementById('table');
-        const selectButton = document.getElementById('selectButton');
+        const selectButton = document.getElementById('select-btn');
+        const saveBtn = document.getElementById('save-btn');
     
         let editEnabled = false;
     
         selectButton.addEventListener('click', () => {
             editEnabled = !editEnabled;
             selectButton.textContent = editEnabled ? 'Disable edit mode' : 'Enable edit mode';
-            if(editEnabled)
+            if(editEnabled){
                 table.addEventListener('click', this.handleClick);
-            else
+                saveBtn.style.display = 'block';
+            }
+            else {
                 table.removeEventListener('click', this.handleClick);
-        });
-    }
-
-    getDataTagFromClick() {
-        // Attach a click event listener to the table
-        const table = document.getElementById('table').addEventListener('click', (event) => {
-            // Check if the clicked element has a "data-tag" attribute
-            const dataTag = event.target.getAttribute('data-tag');
-            if (dataTag) {
-                console.log(`data-tag: "${dataTag}"`);
-                // Perform any desired action with the dataTag
+                saveBtn.style.display = 'none';
             }
         });
     }
-    
-    handleClick(event) {
-        const inputField = document.getElementById('input-field');
-    
-        const currentText = event.target.innerText;
-        inputField.value = currentText; // Pre-fill the input field with current text
-        inputField.style.display = 'block'; // Show the input field
-    
+
+    #calculatePositionInputField() {
         // Get the position
-        const rect = event.target.getBoundingClientRect();
+        const rect = this.#currentObject.getBoundingClientRect();
     
-        // Position the input field directly below the clicked <td>
-        inputField.style.left = `${rect.left}px`;
-        inputField.style.top = `${rect.bottom + window.scrollY}px`; // Account for page scroll
-    
-        inputField.style.width = currentText.length + 'px';
-    
-        // Focus the input field
-        inputField.focus();
-    
-        // Adjust the width of the input field based on the current text
-        this.adjustInputWidth(inputField);
-    
-        // Adjust the width of the input field as the user types
-        inputField.addEventListener('input', () => {
-            this.adjustInputWidth(inputField);
-        });
-    
-        inputField.onblur = () => {
-            event.target.innerText = inputField.value;
-            inputField.style.display = 'none'; // Hide the input field after submitting
-        };
-    };
+        // Position the input field directly below the clicked element
+        this.#inputField.style.left = `${rect.left}px`;
+        this.#inputField.style.top = `${rect.bottom + window.scrollY}px`; // Account for page scroll
+    }
     
     //  to adjust input field width based on text length
-    adjustInputWidth(inputField) {
+    #adjustInputWidth(inputField) {
         // Create a temporary span to measure the width of the text
         const span = document.createElement('span');
         span.style.visibility = 'hidden';
@@ -90,4 +100,34 @@ class EditMode {
         // Remove the temporary span after measuring
         document.body.removeChild(span);
     }
+
+    handleClick(event) {
+        this.#actualDataTag = event.target.getAttribute('data-tag');
+
+        if (!this.#actualDataTag)
+            return;
+
+        this.#currentObject = event.target;
+        
+        this.#inputField.value = this.#langDictionary[this.#actualDataTag];
+        this.#inputField.style.display = 'block';
+
+        this.#calculatePositionInputField();
+        
+        this.#inputField.focus();
+    
+        this.#adjustInputWidth(this.#inputField);
+    };
+    
+    saveChanges() {
+        if (this.#currentURL)
+            URL.revokeObjectURL(this.#currentURL);
+
+        const blob = new Blob([JSON.stringify(this.#langDictionary, null, 2)], { type: "application/json" });    
+        this.#currentURL = URL.createObjectURL(blob);
+        
+        const link = document.getElementById("save-btn-link");
+        link.href = this.#currentURL; 
+        link.download = this.#userLang + ".json";
+    };
 }
