@@ -59,11 +59,11 @@ function handleClick(event) {
     inputField.focus();
 
     // Adjust the width of the input field based on the current text
-    adjustInputWidth(inputField.value);
+    adjustInputWidth(inputField);
 
     // Adjust the width of the input field as the user types
     inputField.addEventListener('input', () => {
-        adjustInputWidth(inputField.value);
+        adjustInputWidth(inputField);
     });
 
     inputField.onblur = () => {
@@ -89,12 +89,12 @@ function toggleEditMode() {
 }
 
 // Function to adjust input field width based on text length
-function adjustInputWidth(text) {
+function adjustInputWidth(inputField) {
     // Create a temporary span to measure the width of the text
     const span = document.createElement('span');
     span.style.visibility = 'hidden';
     span.style.whiteSpace = 'nowrap'; // Prevent text wrapping
-    span.textContent = text; // Set the text content to the input value
+    span.textContent = inputField.value; // Set the text content to the input value
     document.body.appendChild(span);
 
     // Set the input width based on the span's width

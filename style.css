@@ -312,14 +312,9 @@ tfoot {
 }
 
 /* Style for the input field */
-.input-field {
+#input-field {
     position: absolute;
     display: none;
     padding: 5px;
     width:fit-content;
-}
-
-#contextMenu {
-    position: absolute;
-    display: none;
 }
