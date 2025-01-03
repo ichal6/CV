@@ -1,7 +1,5 @@
 function load(currentLng, tag){
-    const translate = new Translate();
-    const attributeName = tag;
-    translate.init(attributeName, currentLng);
+    const translate = new Translate(tag, currentLng);
     return translate.process(); 
 }
 
