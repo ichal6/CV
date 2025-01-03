@@ -1,8 +1,3 @@
-function load(currentLng, tag){
-    const translate = new Translate(tag, currentLng);
-    return translate.process(); 
-}
-
 function lastSingleLetterToNewLine(elements){
     let result;
     elements.forEach((element, i)=>{
@@ -18,10 +13,13 @@ const urlParams = new URLSearchParams(window.location.search);
 const userLang = urlParams.get("lang") || navigator.language.slice(0, 2);
 const editModeEnabled = urlParams.has("edit") && urlParams.get("edit") == "yes";
 
-const langDict = load(userLang, 'data-tag');
+const translate = new Translate('data-tag', userLang);
+const langDict = translate.process(); 
+
+let editMode;
 
 if(editModeEnabled)
-    new EditMode(langDict, userLang);
+    editMode = new EditMode(langDict, userLang, translate);
 
 let elements = document.querySelectorAll("h1, h2, h3, h4, h5, p, span, .text, .about-point");
 

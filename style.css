@@ -319,6 +319,12 @@ tfoot {
     width:fit-content;
 }
 
-#save-btn {
+#save-btn, #load-input {
     display: none;
+}
+
+#load-input{
+    border: solid;
+    border-width: 1px;
+    padding: 1px;
 }

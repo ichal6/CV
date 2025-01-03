@@ -1,17 +1,19 @@
 class EditMode {
-    #langDictionary;
+    langDictionary;
     #currentURL;
     #currentObject;
     #inputField;
     #actualDataTag;
     #userLang;
 
-    constructor(langDictionary, userLang) {
+    constructor(langDictionary, userLang, translate) {
         this.#initializeEditMode();
         this.handleClick = this.handleClick.bind(this);
         this.saveChanges = this.saveChanges.bind(this);
-        this.#langDictionary = langDictionary;
+        this.readJson = this.readJson.bind(this);
+        this.langDictionary = langDictionary;
         this.#userLang = userLang;
+        this.translate = translate;
     }
    
     #initializeEditMode() {
@@ -26,8 +28,30 @@ class EditMode {
                 
                 this.#inputField  = document.getElementById('input-field');
                 this.#addBehaviorToInput();
+
+                this.#addBehaviorToSave();
             })
             .catch(error => console.error('Error loading edit mode:', error));
+    }
+
+    #addBehaviorToSave() {
+        document.getElementById('load-input').addEventListener('change', this.readJson);
+    }
+
+    readJson(event) {
+        const file = event.target.files[0];
+        if (!file) 
+            return;
+
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+            const contents = event.target.result;
+            this.langDictionary = JSON.parse(contents);
+            this.translate.assignData(this.langDictionary);
+        };
+
+        reader.readAsText(file);
     }
 
     #addBehaviorToInput() {
@@ -41,7 +65,7 @@ class EditMode {
             
             lastSingleLetterToNewLine([this.#currentObject]);
 
-            this.#langDictionary[this.#actualDataTag] = this.#inputField.value;
+            this.langDictionary[this.#actualDataTag] = this.#inputField.value;
 
             this.#inputField.style.display = 'none';
         }
@@ -59,6 +83,7 @@ class EditMode {
         const table = document.getElementById('table');
         const selectButton = document.getElementById('select-btn');
         const saveBtn = document.getElementById('save-btn');
+        const loadInput = document.getElementById('load-input');
     
         let editEnabled = false;
     
@@ -68,10 +93,12 @@ class EditMode {
             if(editEnabled){
                 table.addEventListener('click', this.handleClick);
                 saveBtn.style.display = 'block';
+                loadInput.style.display = 'block';
             }
             else {
                 table.removeEventListener('click', this.handleClick);
                 saveBtn.style.display = 'none';
+                loadInput.style.display = 'none';
             }
         });
     }
@@ -109,7 +136,7 @@ class EditMode {
 
         this.#currentObject = event.target;
         
-        this.#inputField.value = this.#langDictionary[this.#actualDataTag];
+        this.#inputField.value = this.langDictionary[this.#actualDataTag];
         this.#inputField.style.display = 'block';
 
         this.#calculatePositionInputField();
@@ -123,7 +150,7 @@ class EditMode {
         if (this.#currentURL)
             URL.revokeObjectURL(this.#currentURL);
 
-        const blob = new Blob([JSON.stringify(this.#langDictionary, null, 2)], { type: "application/json" });    
+        const blob = new Blob([JSON.stringify(this.langDictionary, null, 2)], { type: "application/json" });    
         this.#currentURL = URL.createObjectURL(blob);
         
         const link = document.getElementById("save-btn-link");
