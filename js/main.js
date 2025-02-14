@@ -1,13 +1,6 @@
-function load(currentLng, tag){
-    const translate = new Translate();
-    const attributeName = tag;
-    translate.init(attributeName, currentLng);
-    translate.process(); 
-}
-
-function lastSingleLetterToNewLine(el){
+function lastSingleLetterToNewLine(elements){
     let result;
-    el.forEach((element, i)=>{
+    elements.forEach((element, i)=>{
        if(!element.innerHTML.match(/[{}]|<script|^\n$/gi)){
         result = element.innerHTML.replace(/ (.) /gi, " "+'\$1'+"&nbsp;");
        }
@@ -18,9 +11,16 @@ function lastSingleLetterToNewLine(el){
 // Parse language parameter from URL (default to browser language if not specified)
 const urlParams = new URLSearchParams(window.location.search);
 const userLang = urlParams.get("lang") || navigator.language.slice(0, 2);
+const editModeEnabled = urlParams.has("edit") && urlParams.get("edit") == "yes";
 
-load(userLang, 'data-tag');
+const translate = new Translate('data-tag', userLang);
+const langDict = translate.process(); 
 
-let el = document.querySelectorAll("h1, h2, h3, h4, h5, p, span, .text, .about-point");
+let editMode;
 
-lastSingleLetterToNewLine(el);
+if(editModeEnabled)
+    editMode = new EditMode(langDict, userLang, translate);
+
+let elements = document.querySelectorAll("h1, h2, h3, h4, h5, p, span, .text, .about-point");
+
+lastSingleLetterToNewLine(elements);

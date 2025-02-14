@@ -304,3 +304,96 @@ header {
 tfoot {
     height: 20mm;
 }
+
+#edit-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Style for the input field */
+#input-field {
+    position: absolute;
+    display: none;
+    padding: 5px;
+    width:fit-content;
+}
+
+#edit-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #edd6c1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#edit-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#edit-options > * {
+    margin-top: 10px;
+}
+
+#edit-options {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#edit-options>button {
+    width: fit-content;
+}
+
+#load-input{
+    border: 1px solid;
+    padding: 1px;
+}
+
+#edit-menu-header > input {
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #FAFAFA;
+    cursor: pointer;
+}
+
+#close {
+    background-color: #ff4141;
+    margin-left: auto;
+}
+
+#minimalize {
+    background-color: #5f9401;
+}
+
+#close:hover {
+    background-color: #ff0000;
+}
+
+#minimalize:hover {
+    background-color: #7FFF00;
+}
+
+#edit-menu-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#minimalize {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
