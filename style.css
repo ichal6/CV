@@ -319,12 +319,50 @@ tfoot {
     width:fit-content;
 }
 
-#save-btn, #load-input {
+#edit-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #edd6c1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#edit-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#edit-options > * {
+    margin-top: 10px;
+}
+
+#edit-options {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#edit-options>button {
+    width: fit-content;
 }
 
 #load-input{
     border: solid;
     border-width: 1px;
     padding: 1px;
+}
+
+#minimalize {
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    font-size: 20px;
+    color: #FAFAFA;
 }

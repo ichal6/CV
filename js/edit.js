@@ -5,6 +5,7 @@ class EditMode {
     #inputField;
     #actualDataTag;
     #userLang;
+    #minimalizeEdit;
 
     constructor(langDictionary, userLang, translate) {
         this.#initializeEditMode();
@@ -14,6 +15,7 @@ class EditMode {
         this.langDictionary = langDictionary;
         this.#userLang = userLang;
         this.translate = translate;
+        this.#minimalizeEdit = false
     }
    
     #initializeEditMode() {
@@ -27,11 +29,22 @@ class EditMode {
                 saveBtn.addEventListener("click", this.saveChanges);
                 
                 this.#inputField  = document.getElementById('input-field');
-                this.#addBehaviorToInput();
 
+                this.#addBehaviorToInput();
                 this.#addBehaviorToSave();
+                this.#addBehaviorToMinimalizeEdit();
             })
             .catch(error => console.error('Error loading edit mode:', error));
+    }
+
+    #addBehaviorToMinimalizeEdit() {
+        const minimalizeEdit = document.getElementById('minimalize');
+        const editMenuContent = document.getElementById('edit-menu-content');
+        minimalizeEdit.addEventListener('click', () => {
+            editMenuContent.style.display = this.#minimalizeEdit ? 'flex' : 'none';
+            minimalizeEdit.value = this.#minimalizeEdit ? '-' : '+';
+            this.#minimalizeEdit = !this.#minimalizeEdit;
+        });
     }
 
     #addBehaviorToSave() {
@@ -80,10 +93,10 @@ class EditMode {
     }
 
     #toggleEditMode() {
-        const table = document.getElementById('table');
+        const editOptions = document.getElementById('edit-options');
+
+        const table = document.getElementById('content-table');
         const selectButton = document.getElementById('select-btn');
-        const saveBtn = document.getElementById('save-btn');
-        const loadInput = document.getElementById('load-input');
     
         let editEnabled = false;
     
@@ -92,13 +105,11 @@ class EditMode {
             selectButton.textContent = editEnabled ? 'Disable edit mode' : 'Enable edit mode';
             if(editEnabled){
                 table.addEventListener('click', this.handleClick);
-                saveBtn.style.display = 'block';
-                loadInput.style.display = 'block';
+                editOptions.style.display = 'flex';
             }
             else {
                 table.removeEventListener('click', this.handleClick);
-                saveBtn.style.display = 'none';
-                loadInput.style.display = 'none';
+                editOptions.style.display = 'none';
             }
         });
     }
