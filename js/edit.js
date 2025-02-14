@@ -33,8 +33,18 @@ class EditMode {
                 this.#addBehaviorToInput();
                 this.#addBehaviorToSave();
                 this.#addBehaviorToMinimalizeEdit();
+                this.#addBehaviorToClose();
             })
             .catch(error => console.error('Error loading edit mode:', error));
+    }
+
+    #addBehaviorToClose() {
+        const closeEdit = document.getElementById('close');
+        closeEdit.addEventListener('click', () => {
+            if (confirm('Returning to edit mode requires refreshing the browser. Do you want to proceed?')) {
+                document.getElementById('edit-menu').style.display = 'none';
+            }
+        });
     }
 
     #addBehaviorToMinimalizeEdit() {
