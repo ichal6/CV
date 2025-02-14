@@ -15,4 +15,9 @@ LANGUAGE='pl'
  act -j html_to_pdf --artifact-server-path /path/where/save/resume/on/the/same/disk/as/repository/be/
 ```
 
+example for Windows:
+```bash
+ act -j html_to_pdf --artifact-server-path C:\Resume
+```
+
 [Return to Readme](README.md)
